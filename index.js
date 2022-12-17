@@ -99,7 +99,7 @@ async function run() {
             const posts = await PostList.find().toArray();
             res.send(posts);
         });
-        
+
         app.post('/add-comment',async (req,res) => {
             const comment = req.body;
             const query = { _id: ObjectId(comment.postId) }
@@ -127,6 +127,7 @@ async function run() {
             const post = await PostList.findOne(query);
             if (!post.likes) post.likes = [];
             if (post.likes.find(like => like.userEmail === email)) {
+
                 return res.send({
                     message: "Aleready Liked",
                     totalLikes: post.likes.length

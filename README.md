@@ -30,8 +30,8 @@
         "email" : "demo@gamil.com"
     }   
 ### Create: Add New Post
-    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/addPost
-    Local Registration API: http://localhost:5000/addPost
+    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/posts
+    Local Registration API: http://localhost:5000/posts
     Method: Post
     {
     "title": "Demo is Ready to Test",
@@ -45,8 +45,8 @@
     Method: Get
 
 6. Delete: Delete post by id
-    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/delete/:id
-    Local Registration API: http://localhost:5000/delete/:id
+    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/posts/:id
+    Local Registration API: http://localhost:5000/posts/:id
     Method: Delete
 
 7. Update: Update post by id
