@@ -1,10 +1,10 @@
-### ATG Backend Guid
+# ATG Backend Guid
 1. Register
 
     Online Registration API: https://atg-backend-rafiqcoder.vercel.app/user-registration
     Local Registration API: http://localhost:5000/register/user-registration
     Method: Post
-# Data for api call
+### Data for api call
     {
     "firstName" : "Demo",
     "lastName" : " Name",
@@ -16,7 +16,7 @@
     Online Registration API: https://atg-backend-rafiqcoder.vercel.app/login
     Local Registration API: http://localhost:5000/user-login
 
- # Json Demo Data for Api:
+ ### Json Demo Data for Api:
     {
         "email" : "demo@gamil.com",
         "password" : "demoPassword"
@@ -25,11 +25,11 @@
     Online Registration API: https://atg-backend-rafiqcoder.vercel.app/forgetPassword
     Local Registration API: http://localhost:5000/forgetPassword
     Method: Post
-# Json Demo Data for Api:
+### Json Demo Data for Api:
     {
         "email" : "demo@gamil.com"
     }   
-# Create: Add New Post
+### Create: Add New Post
     Online Registration API: https://atg-backend-rafiqcoder.vercel.app/addPost
     Local Registration API: http://localhost:5000/addPost
     Method: Post
@@ -64,7 +64,7 @@
     Online Registration API: https://atg-backend-rafiqcoder.vercel.app/comments
     Local Registration API: http://localhost:5000/add-comment
     Method: Post
-# Json Demo Data for Api:
+### Json Demo Data for Api:
     {
     "postId": "",
     "comments": "text and comments"
