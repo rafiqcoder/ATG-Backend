@@ -25,7 +25,7 @@ async function run() {
             console.log(user);
             const query = { email: user.email }
             const existUser = await UserList.find(query).toArray();
-            
+
             if (existUser.length === 0) {
                 const result = await UserList.insertOne(user);
 
@@ -56,21 +56,55 @@ async function run() {
             }
             res.status(401).send('This email is not registered');
         });
-        app.post('/add-post',async (req,res) => {
+        app.post('/posts',async (req,res) => {
             const post = req.body;
             const result = await PostList.insertOne(post);
             console.log(result);
             res.send({ message: "posted Successfully",result });
         });
+        app.patch('/posts/:id',async (req,res) => {
+            const { id } = req.params;
+            const updatedpost = req.body;
+
+            const query = { _id: ObjectId(id) };
+            const result = await PostList.updateOne(query,{ $set: updatedpost });
+
+            if (result.modifiedCount > 0) {
+                res.send({
+                    message: 'updated Successfully',
+                    data: result,
+                });
+            } else {
+                res.send({
+                    message: 'error',
+                });
+            }
+
+        });
+
+        app.delete('/posts/:id',async (req,res) => {
+            const id = req.params.id;
+
+            const query = { _id: ObjectId(id) };
+           
+            const result = await PostList.deleteOne(query);
+           
+            res.send({
+                message: "post Deleted Succesfully",
+                result:result
+            });
+        })
+
         app.get('/get-posts',async (req,res) => {
             const posts = await PostList.find().toArray();
             res.send(posts);
         });
+        
         app.post('/add-comment',async (req,res) => {
             const comment = req.body;
             const query = { _id: ObjectId(comment.postId) }
             const post = await PostList.findOne(query);
-             if(!post.comments) post.comments = [];
+            if (!post.comments) post.comments = [];
             const comments = post.comments;
 
             comments.push(comment);
@@ -84,7 +118,7 @@ async function run() {
             const comments = post.comments;
             res.send(comments);
         });
-        
+
         app.post('/add-like',async (req,res) => {
             const like = req.body;
             const email = like.userEmail;
@@ -97,7 +131,7 @@ async function run() {
                     message: "Aleready Liked",
                     totalLikes: post.likes.length
                 })
-            } 
+            }
             const likes = post.likes;
             likes.push(like);
             const result = await PostList.updateOne(query,{ $set: { likes: likes } });
