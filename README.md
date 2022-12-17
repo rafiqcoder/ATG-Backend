@@ -40,8 +40,8 @@
 
 5. Read: Get all post
 
-    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/allPost
-    Local Registration API: http://localhost:5000/allPost
+    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/posts
+    Local Registration API: http://localhost:5000/posts
     Method: Get
 
 6. Delete: Delete post by id
@@ -50,8 +50,8 @@
     Method: Delete
 
 7. Update: Update post by id
-    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/updatePost/:id
-    Local Registration API: http://localhost:5000/updatePost/:id
+    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/posts/:id
+    Local Registration API: http://localhost:5000/posts/:id
     Method: Patch
     Need data like this (JSON):
     
