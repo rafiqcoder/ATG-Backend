@@ -22,8 +22,8 @@
         "password" : "demoPassword"
     }
 3. Forget Password
-    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/forgetPassword
-    Local Registration API: http://localhost:5000/forgetPassword
+    Online Registration API: https://atg-backend-rafiqcoder.vercel.app/forget-pass
+    Local Registration API: http://localhost:5000/forget-pass
     Method: Post
 ### Json Demo Data for Api:
     {
@@ -66,7 +66,7 @@
     Method: Post
 ### Json Demo Data for Api:
     {
-    "postId": "",
+    "postId": "639c66fbed55e26c969d321c",
     "comments": "text and comments"
     }
 10. Comment: GET All Comment particular posts by id
